@@ -1,6 +1,6 @@
  CREATE DATABASE FaceTimeDB COLLATE Vietnamese_CI_AS;
 GO
-USE [FaceTimeDB];
+USE FaceTimeDB;
 
 
 IF OBJECT_ID('dbo.attendance_logs', 'U') IS NOT NULL
