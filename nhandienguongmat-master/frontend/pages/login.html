@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FaceTime - Đăng Nhập</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .login-container {
+            display: flex;
+            height: 100vh;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, #4361ee, #4895ef);
+        }
+        
+        .login-card {
+            width: 400px;
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+        
+        .login-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .login-logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #4361ee;
+            margin-bottom: 10px;
+        }
+        
+        .login-form .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .login-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #212529;
+        }
+        
+        .login-form input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .login-form input:focus {
+            border-color: #4361ee;
+            outline: none;
+        }
+        
+        .login-form button {
+            width: 100%;
+            padding: 12px;
+            background-color: #4361ee;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .login-form button:hover {
+            background-color: #3f37c9;
+        }
+        
+        .login-footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #6c757d;
+        }
+        
+        .login-options {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .login-option {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .login-option a {
+            color: #4361ee;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .login-option a:hover {
+            text-decoration: underline;
+        }
+        
+        .face-login-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+            width: 100%;
+            padding: 12px;
+            background-color: #4cc9f0;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .face-login-btn:hover {
+            background-color: #3bb4d8;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <div class="login-logo">FaceTime</div>
+                <p>Hệ thống chấm công bằng khuôn mặt</p>
+            </div>
+            <form class="login-form" id="loginForm">
+                <div class="form-group">
+                    <label for="username">Tên đăng nhập</label>
+                    <input type="text" id="username" name="username" placeholder="Nhập tên đăng nhập" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Mật khẩu</label>
+                    <input type="password" id="password" name="password" placeholder="Nhập mật khẩu" required>
+                </div>
+                <button type="submit">Đăng nhập</button>
+                
+                <button type="button" class="face-login-btn">
+                    <i class="fas fa-camera"></i> Đăng nhập bằng khuôn mặt
+                </button>
+            </form>
+            
+            <div class="login-options">
+                <div class="login-option">
+                    <a href="#">Quên mật khẩu?</a>
+                </div>
+                <div class="login-option">
+                    <a href="#">Liên hệ hỗ trợ</a>
+                </div>
+            </div>
+            
+            <div class="login-footer">
+                <p>© 2025 FaceTime. Bản quyền thuộc về công ty.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            // Thực hiện xác thực đăng nhập
+            // Trong trường hợp thực tế, gửi request đến server
+            if (username && password) {
+                // Chuyển hướng đến trang dashboard sau khi đăng nhập thành công
+                window.location.href = 'dashboard.html';
+            } else {
+                alert('Vui lòng nhập tên đăng nhập và mật khẩu!');
+            }
+        });
+        
+        document.querySelector('.face-login-btn').addEventListener('click', function() {
+            // Xử lý đăng nhập bằng khuôn mặt
+            // Trong trường hợp thực tế, kích hoạt camera và API nhận diện khuôn mặt
+            alert('Tính năng đăng nhập bằng khuôn mặt đang được phát triển!');
+        });
+    </script>
+</body>
+</html>

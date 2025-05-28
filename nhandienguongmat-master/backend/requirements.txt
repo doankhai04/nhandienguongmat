@@ -1,0 +1,13 @@
+Flask
+Flask-SQLAlchemy
+Flask-Migrate
+Flask-Bcrypt
+Flask-Cors
+psycopg2-binary
+pyodbc
+python-dotenv
+PyJWT
+face_recognition
+Pillow
+numpy
+gunicorn

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!-- YourSecurePassword123! -->
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FaceTime - Chấm Công Khuôn Mặt (Tối giản)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <div class="login-container" id="login-page" style="display: none;">
+        <div class="login-card">
+            <div class="login-header">
+                <div class="login-logo">FaceTime</div>
+                <p>Hệ thống chấm công tối giản</p>
+            </div>
+            <form class="login-form" id="loginForm">
+                 <div class="form-group">
+                    <label for="username">Tên đăng nhập (Admin)</label>
+                    <input type="text" id="username" placeholder="Nhập tên đăng nhập" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Mật khẩu</label>
+                    <input type="password" id="password" placeholder="Nhập mật khẩu" required>
+                </div>
+                <button type="submit"><i class="fas fa-sign-in-alt"></i> Đăng nhập</button>
+                </form>
+            <div class="login-footer">
+                <p>© <span id="current-year"></span> FaceTime Minimal.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="main-layout" style="display: none;">
+        <aside class="sidebar" id="sidebar">
+            <div class="brand">
+                <div class="brand-icon"><i class="fas fa-id-card"></i></div>
+                <div class="brand-text">FaceTime</div>
+            </div>
+            <ul class="menu">
+                <li class="menu-item">
+                    <a href="#attendance" class="menu-link active"> <span class="menu-icon"><i class="fas fa-camera"></i></span>
+                        <span class="menu-text">Điểm danh</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#face-data" class="menu-link">
+                        <span class="menu-icon"><i class="fas fa-database"></i></span>
+                        <span class="menu-text">Dữ liệu Khuôn mặt</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#user-data" class="menu-link">
+                        <span class="menu-icon"><i class="fas fa-users"></i></span>
+                        <span class="menu-text">Quản lý Nhân viên</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#account" class="menu-link">
+                        <span class="menu-icon"><i class="fas fa-user-cog"></i></span>
+                        <span class="menu-text">Tài khoản Admin</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#" class="menu-link" id="logout-link">
+                        <span class="menu-icon"><i class="fas fa-sign-out-alt"></i></span>
+                        <span class="menu-text">Đăng xuất</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <main class="content" id="content">
+            <div class="top-bar">
+                <button class="toggle-sidebar" id="toggle-sidebar">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="user-dropdown">
+                    <div class="user-info" id="user-dropdown-toggle">
+                        <div class="avatar">?</div>
+                        <div class="user-name">Admin</div> <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="dropdown-menu" id="user-dropdown-menu">
+                        <a href="#account" class="dropdown-item">
+                             <span class="dropdown-icon"><i class="fas fa-key"></i></span>
+                            Đổi mật khẩu
+                        </a>
+                        <a href="#" class="dropdown-item" id="logout-dropdown-link">
+                             <span class="dropdown-icon"><i class="fas fa-sign-out-alt"></i></span>
+                            Đăng xuất
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="page-content-area">
+                <div id="loading-indicator" style="display: none;">
+                    <i class="fas fa-spinner fa-spin fa-2x"></i>
+                    <p>Đang tải...</p>
+                </div>
+                </div>
+
+        </main>
+    </div>
+
+    <script src="js/app.js" defer></script>
+</body>
+</html>

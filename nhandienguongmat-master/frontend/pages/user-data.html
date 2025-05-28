@@ -1,0 +1,108 @@
+<div class="page" id="user-data-content">
+    <h1 class="page-title">Quản lý Nhân viên</h1>
+
+    <div class="card" id="user-list-card">
+        <div class="card-header">
+            <h2 class="card-title">Danh sách nhân viên</h2>
+            <button class="button button-primary button-sm" id="add-new-user-btn">
+                <i class="fas fa-plus"></i> Thêm nhân viên
+            </button>
+        </div>
+        <div class="card-body">
+            <div class="search-box">
+                <input type="text" class="search-input" placeholder="Tìm kiếm theo ID hoặc Tên...">
+                <button class="search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+             <div class="card-body no-padding">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Họ và tên</th>
+                            <th>Trạng thái làm việc</th>
+                            <th>Dữ liệu khuôn mặt</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>NV001</td>
+                            <td>Nguyễn Văn A</td>
+                            <td data-status-value="active"><span class="badge badge-success">Đang làm việc</span></td>
+                            <td><span class="badge badge-success">Đã có</span></td>
+                            <td>
+                                 <button class="action-button" title="Sửa"><i class="fas fa-edit"></i></button>
+                                 <button class="action-button" title="Xóa"><i class="fas fa-trash"></i></button>
+                                 </td>
+                        </tr>
+                        <tr>
+                            <td>NV102</td>
+                            <td>Hoàng Văn E</td>
+                             <td data-status-value="active"><span class="badge badge-success">Đang làm việc</span></td>
+                            <td><span class="badge badge-warning">Chưa có</span></td>
+                            <td>
+                                 <button class="action-button" title="Sửa"><i class="fas fa-edit"></i></button>
+                                 <button class="action-button" title="Xóa"><i class="fas fa-trash"></i></button>
+                                 <button class="action-button add-face-data-link" title="Thêm dữ liệu khuôn mặt"><i class="fas fa-camera-retro" style="color: var(--success);"></i></button>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td>NVXYZ</td>
+                            <td>Nhân Viên Mới</td>
+                             <td data-status-value="new"><span class="badge badge-primary">Mới</span></td>
+                             <td><span class="badge badge-warning">Chưa có</span></td>
+                            <td>
+                                 <button class="action-button" title="Sửa"><i class="fas fa-edit"></i></button>
+                                 <button class="action-button" title="Xóa"><i class="fas fa-trash"></i></button>
+                                 <button class="action-button add-face-data-link" title="Thêm dữ liệu khuôn mặt"><i class="fas fa-camera-retro" style="color: var(--success);"></i></button>
+                             </td>
+                         </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            </div>
+    </div>
+
+    <div class="card" id="user-form" style="display: none;">
+        <div class="card-header">
+            <h2 class="card-title" id="user-form-title">Thêm nhân viên mới</h2>
+             <button class="button button-outline button-sm" id="close-user-form-btn">
+                 <i class="fas fa-times"></i> Đóng
+             </button>
+        </div>
+        <div class="card-body">
+             <form id="add-edit-user-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label class="form-label" for="user-id">ID Nhân viên</label>
+                        <input type="text" id="user-id" class="form-control" placeholder="vd: NV345" required>
+                         <small class="form-text">Không thể sửa ID sau khi tạo.</small>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="user-fullname">Họ và tên</label>
+                        <input type="text" id="user-fullname" class="form-control" placeholder="Nhập họ và tên" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="user-workstatus">Trạng thái làm việc</label>
+                        <select class="form-control" id="user-workstatus">
+                            <option value="active">Đang làm việc</option>
+                            <option value="inactive">Nghỉ việc</option>
+                            <option value="new">Mới</option>
+                        </select>
+                    </div>
+                     </div>
+                 <div class="form-actions">
+                    <button type="submit" class="button button-primary">
+                        <i class="fas fa-save"></i> Lưu thông tin
+                    </button>
+                    <button type="button" class="button button-outline" id="cancel-user-form-btn">
+                        <i class="fas fa-times"></i> Hủy
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

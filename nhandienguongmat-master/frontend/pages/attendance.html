@@ -1,0 +1,120 @@
+<div class="page" id="attendance-content">
+    <h1 class="page-title">Điểm Danh Check-in</h1>
+
+    <div class="card">
+        <div class="card-header">
+            <h2 class="card-title">Camera Điểm Danh</h2>
+            </div>
+        <div class="card-body">
+            <div class="stream-container">
+                <video class="camera-feed" id="camera-feed" autoplay muted playsinline></video>
+                <div class="recognition-status" id="recognition-status">
+                    <span class="status-indicator" id="status-indicator"></span>
+                    <span id="status-text">Đang chờ...</span>
+                </div>
+                <div class="stream-controls">
+                    <button class="stream-button" title="Chụp ảnh (Debug - Tùy chọn)">
+                        <i class="fas fa-camera"></i>
+                    </button>
+                    <button class="stream-button primary" title="Bắt đầu/Dừng nhận diện" id="toggle-recognition">
+                        <i class="fas fa-play" id="recognition-icon"></i>
+                    </button>
+                    <button class="stream-button danger" title="Tắt camera" id="stop-camera">
+                        <i class="fas fa-power-off"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="recognition-results" style="margin-top: 20px;">
+                <h3 class="card-title" style="font-size: 16px; margin-bottom: 10px;">Kết quả nhận diện gần đây</h3>
+                <div class="card-body no-padding" style="max-height: 150px; overflow-y: auto;"> <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Thời gian</th>
+                                <th>Nhân viên</th>
+                                <th>ID</th>
+                                </tr>
+                        </thead>
+                        <tbody id="recognition-log">
+                             <tr>
+                                 <td>12:15:30</td>
+                                 <td>Lê Văn C</td>
+                                 <td>NV123</td>
+                             </tr>
+                             <tr>
+                                 <td>11:55:10</td>
+                                 <td>Nguyễn Thị Test</td>
+                                 <td>NVTEST</td>
+                             </tr>
+                             </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h2 class="card-title">Lịch sử Check-in</h2>
+        </div>
+        <div class="card-body">
+            <form id="filter-attendance-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label class="form-label" for="filter-date-from">Từ ngày</label>
+                        <input type="date" id="filter-date-from" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="filter-date-to">Đến ngày</label>
+                        <input type="date" id="filter-date-to" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="filter-employee">Nhân viên (ID hoặc Tên)</label>
+                        <input type="text" id="filter-employee" class="form-control" placeholder="Nhập ID hoặc Tên">
+                        </div>
+                    </div>
+                 <div class="form-actions">
+                    <button type="submit" class="button button-primary">
+                        <i class="fas fa-search"></i> Tìm kiếm
+                    </button>
+                    <button type="reset" class="button button-outline">
+                        <i class="fas fa-redo"></i> Đặt lại
+                    </button>
+                </div>
+            </form>
+
+             <div style="margin-top: 20px;" class="card-body no-padding">
+                  <table class="data-table">
+                       <thead>
+                            <tr>
+                                 <th>Ngày</th>
+                                 <th>ID Nhân viên</th>
+                                 <th>Họ và tên</th>
+                                 <th>Giờ vào</th>
+                                 </tr>
+                       </thead>
+                       <tbody id="attendance-history-log">
+                            <tr>
+                                 <td>13/05/2025</td>
+                                 <td>NV001</td>
+                                 <td>Nguyễn Văn A</td>
+                                 <td>08:02</td>
+                            </tr>
+                            <tr>
+                                 <td>13/05/2025</td>
+                                 <td>NV045</td>
+                                 <td>Trần Thị B</td>
+                                 <td>08:15</td>
+                            </tr>
+                              <tr>
+                                 <td>12/05/2025</td>
+                                 <td>NV123</td>
+                                 <td>Lê Văn C</td>
+                                 <td>07:59</td>
+                             </tr>
+                       </tbody>
+                  </table>
+                  </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,105 @@
+<div class="page" id="face-data-content">
+    <h1 class="page-title">Quản lý Dữ liệu Khuôn mặt</h1>
+
+    <div class="card" id="face-data-list-card">
+        <div class="card-header">
+            <h2 class="card-title">Danh sách khuôn mặt đã thêm</h2>
+             <button class="button button-primary button-sm" id="add-new-face-btn">
+                <i class="fas fa-plus"></i> Thêm mới
+            </button>
+        </div>
+        <div class="card-body">
+            <div class="search-box">
+                <input type="text" class="search-input" placeholder="Tìm kiếm theo tên hoặc ID...">
+                <button class="search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
+            <div class="face-grid">
+                <div class="face-card">
+                    <div class="face-image">
+                        <img src="https://via.placeholder.com/200x200/4361EE/FFFFFF?text=NVA" alt="Nguyễn Văn A">
+                    </div>
+                    <div class="face-info">
+                        <div class="face-name">Nguyễn Văn A</div>
+                        <div class="face-details">ID: NV001</div> <div class="face-actions">
+                            <button class="face-button delete" title="Xóa"><i class="fas fa-trash"></i> Xóa</button>
+                        </div>
+                    </div>
+                </div>
+                 <div class="face-card">
+                    <div class="face-image">
+                        <img src="https://via.placeholder.com/200x200/4CC9F0/FFFFFF?text=TTB" alt="Trần Thị B">
+                    </div>
+                    <div class="face-info">
+                        <div class="face-name">Trần Thị B</div>
+                        <div class="face-details">ID: NV045</div>
+                        <div class="face-actions">
+                            <button class="face-button delete" title="Xóa"><i class="fas fa-trash"></i> Xóa</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="face-card add-new" id="add-new-face-card">
+                    <i class="fas fa-plus"></i>
+                    <div>Thêm dữ liệu</div>
+                </div>
+            </div>
+
+            </div>
+    </div>
+
+    <div class="card" id="face-form" style="display: none;">
+        <div class="card-header">
+            <h2 class="card-title" id="face-form-title">Thêm dữ liệu khuôn mặt mới</h2>
+            <button class="button button-outline button-sm" id="close-face-form-btn">
+                 <i class="fas fa-times"></i> Đóng
+            </button>
+        </div>
+        <div class="card-body">
+             <form id="add-edit-face-form"> <div class="form-grid">
+                    <div class="form-group" style="grid-column: 1 / -1;">
+                        <label class="form-label" for="face-employee-select">Chọn nhân viên (*)</label>
+                        <select class="form-control" id="face-employee-select" required>
+                            <option value="">-- Chọn nhân viên chưa có dữ liệu --</option>
+                            <option value="NV102">Hoàng Văn E (NV102)</option>
+                            <option value="NVXYZ">Nhân Viên Mới (NVXYZ)</option>
+                        </select>
+                         <small class="form-text">Chỉ hiển thị nhân viên chưa có dữ liệu khuôn mặt.</small>
+                    </div>
+
+                    <div class="form-group" style="grid-column: 1 / -1;">
+                        <label class="form-label">Chụp ảnh khuôn mặt (Tối đa 5 ảnh)</label>
+                        <div class="stream-container" style="padding-top: 75%; min-height: 250px;"> <video class="camera-feed" id="face-camera" autoplay muted playsinline></video>
+                            <div class="stream-controls">
+                                <button type="button" class="stream-button" title="Chụp ảnh" id="capture-face-btn">
+                                    <i class="fas fa-camera"></i>
+                                </button>
+                                 <button type="button" class="stream-button danger" title="Tắt camera" id="stop-face-camera-btn">
+                                     <i class="fas fa-power-off"></i>
+                                 </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="grid-column: 1 / -1;">
+                        <label class="form-label">Ảnh đã chụp (<span id="photo-count">0</span>/5)</label>
+                        <div id="captured-photos-container">
+                            </div>
+                         <small class="form-text">Chụp ảnh trực diện, rõ mặt, đủ sáng. Tối thiểu 1 ảnh.</small>
+                    </div>
+
+                    </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="button button-primary">
+                        <i class="fas fa-save"></i> Lưu dữ liệu
+                    </button>
+                    <button type="button" class="button button-outline" id="cancel-face-form-btn">
+                        <i class="fas fa-times"></i> Hủy
+                    </button>
+                </div>
+             </form>
+        </div>
+    </div>
+</div>
